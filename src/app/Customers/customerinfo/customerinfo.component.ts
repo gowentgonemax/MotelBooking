@@ -26,9 +26,9 @@ export class CustomerinfoComponent implements OnInit {
   onSubmit(){
     
     this.submitted =  true;
-    this.db.collection("CustomerInfo").add(
-      "ss"
-    )
+    //this.db.collection("CustomerInfo").add()
+     
+    
     
     // cust_first_name : this.customerinfo.first_name
     // cust_last_name:this.customerinfo.last_name

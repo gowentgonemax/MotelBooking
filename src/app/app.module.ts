@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MotelroombookingComponent } from './Customers/motelroombooking/motelroombooking.component';
 import { RidebookingComponent } from './Customers/ridebooking/ridebooking.component';
-import {FormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
@@ -20,6 +19,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { CustomerinfoComponent } from './Customers/customerinfo/customerinfo.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {FormControl,FormGroup} from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -35,8 +37,10 @@ import { CustomerinfoComponent } from './Customers/customerinfo/customerinfo.com
     BrowserAnimationsModule,
     MatCardModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     RouterModule,
     FormsModule,
+    ReactiveFormsModule,
     MatSelectModule,
     MatButtonModule,
     MatFormFieldModule,

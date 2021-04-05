@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router"
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {FormControl} from '@angular/forms';
+import {FormControl,FormGroup} from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import {Search} from '../../../variables/variables'
 import {DataserviceService} from '../../service/dataservice.service'
@@ -23,6 +23,11 @@ export class MotelroombookingComponent implements OnInit {
   myData:[];
   myDate = new Date()
   
+  range = new FormGroup({
+    start: new FormControl(),
+    end: new FormControl()
+  });
+
   constructor(private ds:DataserviceService,
               ) {
     console.log("From constructor")
