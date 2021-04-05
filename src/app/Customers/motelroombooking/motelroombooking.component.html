@@ -10,8 +10,8 @@
     <mat-form-field appearance="fill">
         <mat-label>Select Location</mat-label>
         <mat-select [(ngModel)]="selectedLocation" [ngModelOptions]="{standalone: true}">
-          <mat-option *ngFor="let location of locations" [value]="location.locationName">
-            {{location.locationValue}}
+          <mat-option *ngFor="let location of locationData" [value]="location.location">
+            {{location.location}}
           </mat-option>
         </mat-select>
       </mat-form-field>

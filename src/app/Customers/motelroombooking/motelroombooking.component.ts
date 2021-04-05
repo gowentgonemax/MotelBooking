@@ -4,8 +4,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {FormControl} from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import {Search} from '../../../variables/variables'
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Action } from 'rxjs/internal/scheduler/Action';
+import {DataserviceService} from '../../service/dataservice.service'
+
 
 interface Locations {
   locationName: string;
@@ -22,31 +22,26 @@ export class MotelroombookingComponent implements OnInit {
   submitted:boolean=false;
   rooms:boolean=true;
   selectedLocation:String;
-  a:String;
+  locationData:any;
   myData:[];
-  locations: Locations[] = [
-    {locationName: 'New Jersey', locationValue: 'New Jersey'},
-    {locationName: 'New York', locationValue: 'New York'},
-    {locationName: 'Texas', locationValue: 'Texas'},
-    {locationName: 'Sansfransisco', locationValue: 'SFO'},
-    {locationName: 'Kentucky', locationValue: 'Kentucky'},
-    {locationName: 'Philadelphia', locationValue: 'Philly'},
-    {locationName: 'Virginia', locationValue: 'Virginia'}
-  ];
   
-  constructor(private afStore:AngularFirestore) {
-
-          console.log("From constructor")
-
-        afStore.collection("CustomerInfo").get().subscribe(snap => {
-        snap.forEach(doc => {
-          console.log(typeof(doc.data()))
-    });
-});
   
+  constructor(ds:DataserviceService) {
 
+    console.log("From constructor")
+    ds.getLocations().subscribe(a=> {
+      this.locationData = a;
+      console.log(this.locationData)
+    })     
 
+   
+    
+          
   }
+
+
+
+       
   ngOnInit(): void {
     console.log("fron onginit")
     
