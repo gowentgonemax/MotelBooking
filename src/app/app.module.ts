@@ -19,13 +19,15 @@ import {FlexLayoutModule} from '@angular/flex-layout'
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { CustomerinfoComponent } from './Customers/customerinfo/customerinfo.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MotelroombookingComponent,
-    RidebookingComponent
+    RidebookingComponent,
+    CustomerinfoComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     MatButtonModule,
     MatFormFieldModule,
     AngularFireModule.initializeApp(FirebaseConfig),
+    
     
     
   

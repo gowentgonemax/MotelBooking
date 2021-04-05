@@ -7,10 +7,7 @@ import {Search} from '../../../variables/variables'
 import {DataserviceService} from '../../service/dataservice.service'
 
 
-interface Locations {
-  locationName: string;
-  locationValue: string;
-}
+
 
 @Component({
   selector: 'app-motelroombooking',
@@ -24,24 +21,16 @@ export class MotelroombookingComponent implements OnInit {
   selectedLocation:String;
   locationData:any;
   myData:[];
+  myDate = new Date()
   
-  
-  constructor(ds:DataserviceService) {
-
+  constructor(private ds:DataserviceService,
+              ) {
     console.log("From constructor")
     ds.getLocations().subscribe(a=> {
       this.locationData = a;
       console.log(this.locationData)
-    })     
-
-   
-    
-          
-  }
-
-
-
-       
+    })            
+  }      
   ngOnInit(): void {
     console.log("fron onginit")
     
@@ -51,6 +40,9 @@ export class MotelroombookingComponent implements OnInit {
     this.rooms = false
     console.log("Here, I am.")
     console.log(this.selectedLocation)
-    
+  }
+  confirmMotel(){
+    console.log("confirm Motel")
+    console.log(this.myDate);
   }
 }

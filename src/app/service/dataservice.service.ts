@@ -18,7 +18,7 @@ export class DataserviceService {
   // }
 
   getLocations() {
-    return this.db.collection('MotelLocations').snapshotChanges().pipe(
+    return this.db.collection('MotelsInfo').snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data();
         const id = a.payload.doc.id;
