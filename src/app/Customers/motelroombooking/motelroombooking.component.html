@@ -1,10 +1,10 @@
 <h3><p>Book your Room</p></h3>
 <h3>A hotel room in the daytime is perfect if you want to relax, to keep yourself to yourself or just have some rest for a few hours. Our day hotels are waiting for you!</h3>
 <div  style="float:left">
-    <form (ngSubmit)="onSubmit()">
-        <div class="form-group">
-<p></p>
-<p [hidden]="submitted">
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+  <p></p>
+    <p [hidden]="submitted">
     <mat-form-field appearance="fill">
         <mat-label>Select Location</mat-label>
         <mat-select [(ngModel)]="selectedLocation" [ngModelOptions]="{standalone: true}">
@@ -26,15 +26,13 @@
           <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
           <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
         
-        
-        
       </mat-form-field>
       <p>Selected range: {{range.value | json}}</p>
     </div>
 
         </div>
         <div class="form-group" [hidden]="submitted">
-            <button mat-raised-button color="primary">Search</button>
+            <button mat-raised-button color="primary">View all</button>
         </div>
 
     </form>
@@ -56,7 +54,7 @@
                       </p>
                     </mat-card-content>
                     <mat-card-actions>
-                      <button mat-raised-button color="primary" (click)="confirmMotel()" routerLink="/customerinfo" routerLinkActive="active">Select</button>
+                      <button mat-raised-button color="primary" (click)="confirmMotel()" routerLink="/customerinfo" routerLinkActive="active">Select this Motel?</button>
                     </mat-card-actions>
                   </mat-card>
             </div>

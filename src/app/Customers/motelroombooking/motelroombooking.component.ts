@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router"
-import {MatDatepickerModule} from '@angular/material/datepicker';
 import {FormControl,FormGroup} from '@angular/forms';
-import {MatCardModule} from '@angular/material/card';
-import {Search} from '../../../variables/variables'
-import {DataserviceService} from '../../service/dataservice.service'
+import {DataserviceService} from '../../dataservice.service'
 
 
 
@@ -15,7 +12,6 @@ import {DataserviceService} from '../../service/dataservice.service'
   styleUrls: ['./motelroombooking.component.css']
 })
 export class MotelroombookingComponent implements OnInit {
-  search:Search =  new Search
   submitted:boolean=false;
   rooms:boolean=true;
   selectedLocation:String;

@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
-
+import {CustomerInfo} from './app.customerinfo';
 @Injectable({
   providedIn: 'root'
 })
 export class DataserviceService {
 
-  constructor(private db:AngularFirestore) { 
-
-
-    
-  }
+  customerinfo: CustomerInfo;
+  constructor(private db:AngularFirestore) {  }
 
   // go() {
   //   return this.db.collection('MotelLocations').valueChanges()
   // }
+
+  saveCustomerInfo(record){
+    return this.db.collection('CustomerInfo').add(record)
+    
+  }CustomerInfo
+
+
 
   getLocations() {
     return this.db.collection('MotelsInfo').snapshotChanges().pipe(

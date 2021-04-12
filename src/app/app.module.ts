@@ -16,13 +16,12 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {FlexLayoutModule} from '@angular/flex-layout'
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
-import { CustomerinfoComponent } from './Customers/customerinfo/customerinfo.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {FormControl,FormGroup} from '@angular/forms';
-import { MatNativeDateModule } from '@angular/material/core';
+import {MatInputModule} from '@angular/material/input';
 
+import { CustomerinfoComponent } from './Customers/customerinfo/customerinfo.component';
+import {FormControl,FormGroup,ReactiveFormsModule ,FormsModule} from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import {DataserviceService} from '../../src/app/dataservice.service'
 
 @NgModule({
   declarations: [
@@ -34,6 +33,7 @@ import { MatNativeDateModule } from '@angular/material/core';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatInputModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatDatepickerModule,
@@ -51,7 +51,7 @@ import { MatNativeDateModule } from '@angular/material/core';
   
     
   ],
-  providers: [],
+  providers: [DataserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

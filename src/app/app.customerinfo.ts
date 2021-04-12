@@ -2,7 +2,7 @@ export class Search{
     when?:Date;
     where:String;
 }
-export class CustomerInfo{
+export interface CustomerInfo{
     first_name:string;
     last_name:string;
     gender:string;
@@ -17,3 +17,15 @@ export class CustomerInfo{
     ];
 
 }
+
+export class CustomerInfo1 {
+
+    constructor(
+        public first_name:string,
+        public last_name:string,
+        public gender:string,
+        public phone:string,
+        public email:string
+    ) {  }
+  
+  }
